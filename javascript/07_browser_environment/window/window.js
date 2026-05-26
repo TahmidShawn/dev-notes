@@ -1,4 +1,4 @@
-// Tab Load
+// 0. Tab Load
 
 // 1. The browser engine (Blink written in C++) creates native objects
 //    (DOMWindow, Document, Location).
@@ -14,4 +14,8 @@
 //    the wrapper intercepts the access and forwards it through the
 //    binding layer to the native C++ implementation.
 
-// Wrapper Object --- It is a JS object with a special job, not a normal JS object.
+// Confusion :
+
+// Wrapper Object --- It is a js object with a special job, not a normal JS object.It can store data and also has special behavior to forward property accesses to the native C++ object.
+
+// Native Object --- It is a C++ object that implements the actual functionality of browser features. It is not directly accessible from JavaScript, but the wrapper object allows JS to interact with it.
