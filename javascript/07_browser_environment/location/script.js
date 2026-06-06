@@ -1,26 +1,26 @@
-// full URL
-window.location.href;
+// // full URL
+// window.location.href;
 
-// domain
-window.location.hostname;
+// // domain
+// window.location.hostname;
 
-// path
-window.location.pathname;
+// // path
+// window.location.pathname;
 
-// protocol (http / https)
-window.location.protocol;
+// // protocol (http / https)
+// window.location.protocol;
 
-// query string (?a=1)
-window.location.search;
+// // query string (?a=1)
+// window.location.search;
 
-// hash (#section)
-window.location.hash;
+// // hash (#section)
+// window.location.hash;
 
-// go to new page
-window.location.assign();
+// // go to new page
+// window.location.assign();
 
-// replace URL (no back)
-window.location.replace("https://google.com");
+// // replace URL (no back)
+// window.location.replace("https://google.com");
 
-// reload page
-window.location.reload();
+// // reload page
+// window.location.reload();
