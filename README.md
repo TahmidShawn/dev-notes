@@ -135,7 +135,7 @@ Web Development & Browser System
 │   ├── Canvas API
 │   ├── Geolocation API
 │   ├── Web Workers API
-│   └── File API (limited browser access)
+│   └── File API
 │
 ├── 4. Browser Internals (HOW BROWSER WORKS)
 │   ├── Browser Architecture (Multi-process model)
@@ -168,7 +168,7 @@ Web Development & Browser System
 │   ├── Threads & Processes
 │   └── System Calls
 │
-└── 7. Web Security Layer (VERY IMPORTANT OFTEN MISSED)
+└── 7. Web Security Layer
     ├── Same-Origin Policy
     ├── CORS
     ├── CSP (Content Security Policy)
