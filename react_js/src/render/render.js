@@ -1,61 +1,92 @@
-// 1. before npm run dev
-// → only files exist, nothing runs
+// PHASE 1 — BUILD
+//-------------------------------------------------------------
 
-// 2. npm run dev
-// → vite starts a dev server
+// 1. Write React code.
+// -----> Create components, JSX, hooks, functions, etc.
+// -----> Only source files exist.
+// -----> Nothing has executed yet.
 
-// 3. browser requests app
-// → vite builds js bundle
+// 2. Run `npm run dev`.
+// -----> Vite starts a development server.
+// -----> It waits for the browser to request the application.
 
-// important:
-// jsx is converted to js here (not sent as jsx)
-// normal js (useState, functions, etc.) stays same
-// everything is bundled together into one js file
+// 3. Browser requests the application.
+// -----> Vite begins preparing the JavaScript bundle.
+// -----> JSX is transformed into JavaScript.
+// -----> Normal JavaScript (useState, functions, variables, etc.) stays unchanged.
+// -----> React library and your application code are bundled together.
 
-// 4. browser receives js bundle (not jsx)
-// → includes:
-//    - transformed jsx
-//    - normal js code (useState, functions, etc.)
+// 4. Browser receives the JavaScript bundle.
+// -----> The browser never receives JSX.
+// -----> It only receives plain JavaScript.
+// -----> The bundle contains React, your components, transformed JSX, and other JavaScript code.
 
-// 5. js runs in browser (v8 runtime starts)
-// → executes code line by line
+// PHASE 2 — INITIAL RENDER
+//--------------------------------------------------------------
 
-// 6. react runs like normal js functions
-// → useState(), render(), jsx() all executed by js engine
+// 5. JavaScript engine executes the bundle.
+// -----> The V8 JavaScript engine starts running the bundle.
+// -----> Code executes line by line.
+// -----> React and your application code begin executing.
 
-// 7. react creates element objects
-// → jsx() returns react element objects
-// → react builds fiber tree internally
+// 6. React (js code) calls component functions.
+// -----> React starts rendering your application.
+// -----> Function components execute like normal JavaScript functions.
+// -----> Hooks (useState, useEffect, etc.) are also executed.
 
-// 8. react uses dom APIs
-// → document.createElement()
-// → appendChild()
-// → updates real dom
+// 7. JSX creates React Element objects.
+// -----> The transformed jsx() function is executed.
+// -----> React Element objects are created.
+// -----> These are plain JavaScript objects, not real DOM elements.
 
-// 9. browser renders ui on screen
-// → pixels painted on screen
+// 8. React builds the Fiber tree.
+// -----> React converts the React Element objects into a Fiber tree.
+// -----> The Fiber tree represents your application's UI internally.
+// -----> React uses it to track and manage updates efficiently.
 
-//------------------------------------------------------
-// re-render cycle
+// 9. React updates the Real DOM.
+// -----> React compares the Fiber tree with the current DOM.
+// -----> It uses DOM APIs (createElement, appendChild, etc.).
+// -----> Real HTML elements are created and inserted into the page.
 
+// 10. Browser paints the UI.
+// -----> The browser renders the updated DOM.
+// -----> Pixels are drawn on the screen.
+// -----> The user sees the initial UI.
 
-// 10. state update happens (setState / setData)
-// → react does not update ui immediately
-// → it schedules update
+// PHASE 3 — RE-RENDER
+//----------------------------------------------------------
 
-// 11. re-render (render phase starts)
-// → component function runs again
-// → new jsx executed again
-// → new react element tree created
+// 11. setState() schedules an update.
+// -----> React does NOT update UI immediately.
+// -----> It marks the component for re-render.
+// -----> Update is queued (batched for performance).
 
-// 12. reconciliation
-// → react compares:
-//    previous fiber tree vs new fiber tree
-// → finds what changed
+// 12. Component function runs again.
+// -----> React re-executes the component function from top to bottom.
+// -----> This is NOT a fresh component.
+// -----> React remembers previous hook values internally.
+// -----> useState does NOT reset to initial value here.
+// -----> React ignores the initial value after first render.
+// -----> It uses the stored state from Fiber memory.
 
-// 13. commit phase
-// → react applies only changes to real dom
-// → minimal dom updates happen
+// 13. New React Elements are created.
+// -----> JSX runs again.
+// -----> New React Element objects are created.
+// -----> These represent the updated UI.
 
-// 14. browser re-paints ui
-// → updated screen appears
+// 14. New Fiber tree is built.
+// -----> React builds a new Fiber tree from new elements.
+// -----> This represents the updated UI structure.
+
+// 15. Reconciliation (diffing).
+// -----> React compares old Fiber tree vs new Fiber tree.
+// -----> Finds what changed (add / update / remove).
+
+// 16. Commit phase updates the Real DOM.
+// -----> React applies only minimal DOM changes.
+// -----> Uses DOM APIs (update text, attributes, nodes).
+
+// 17. Browser repaints the updated UI.
+// -----> Browser renders updated DOM.
+// -----> User sees the updated screen.
