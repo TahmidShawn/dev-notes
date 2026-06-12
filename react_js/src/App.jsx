@@ -1,7 +1,9 @@
+import Test from "./hooks/useState";
+
 const App = () => {
     return (
         <div>
-            <p>Hello</p>
+            <Test />
         </div>
     );
 };
