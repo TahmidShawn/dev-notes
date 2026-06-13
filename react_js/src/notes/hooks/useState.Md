@@ -21,13 +21,6 @@ export function useState(initialState) {
 - It does NOT contain state logic
 - It only forwards the call to React internals
 
-### Beginner idea:
-
-- You call it like a normal function: `useState()`
-- It acts like a router / forwarder
-
----
-
 ## (b) Internal `useState` (real implementation)
 
 React switches implementation internally based on render phase:

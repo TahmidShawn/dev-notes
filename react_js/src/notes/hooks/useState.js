@@ -31,14 +31,6 @@ dispatcher = {
   useState: mountState OR updateState
 }
 
-important beginner idea:
-- this is NOT a normal standalone function
-- it is a method inside an object (dispatcher)
-- react chooses which method to attach
-
-so:
-- dispatcher.useState is a method call
-- it changes based on render phase
 
 2. why two internal functions?
 
