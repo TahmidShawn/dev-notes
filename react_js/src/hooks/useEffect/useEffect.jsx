@@ -1,15 +1,26 @@
-import { useEffect } from "react"
-
+import { useEffect, useState } from "react";
 
 const Test = () => {
-	useEffect(()=>{
-		console.log('data')
-	},[])
-  return (
-	<div>
-	  
-	</div>
-  )
-}
+    // useEffect runs after the component has rendered and the UI is updated in the browser
+    // let count = 0;
+    const [count, setCount] = useState(0);
+    function handleClick() {
+        setCount(count + 1);
+    }
+    useEffect(() => {
+        // side effect
+        // count++;
+        console.log("use effect");
+        return () => {
+            // clean up logic
+        };
+    }, [count]); // dependency array
+    return (
+        <div>
+            <p>{count}</p>
+            <button onClick={handleClick}>Add</button>
+        </div>
+    );
+};
 
-export default Test
+export default Test;
