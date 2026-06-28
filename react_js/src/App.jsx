@@ -1,5 +1,5 @@
 // import Test from "./hooks/useState";
-import Test from "./hooks/useRef/useRef";
+import Test from "./hooks/useReducer/useReducer";
 
 const App = () => {
     return (
