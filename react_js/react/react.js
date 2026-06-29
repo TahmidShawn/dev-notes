@@ -1,88 +1,4 @@
-
 /*
-React useMemo Hook
-
-useMemo is used to avoid unnecessary calculations
-when a function is expensive.
-
-It memorizes (caches) a computed value.
-
-
---------------------------------------------------
-
-1. When to use useMemo
-
-Use it when:
-
-- calculation is heavy
-- depends on some state/props
-- you don’t want to recompute every render
-
-
---------------------------------------------------
-
-2. Syntax
-
-const result = useMemo(() => {
-    return expensiveCalculation();
-}, [dependencies]);
-
-
---------------------------------------------------
-
-3. How it works
-
-React runs the function only when dependencies change.
-
-If dependencies are same,
-React returns cached value.
-
-
---------------------------------------------------
-
-4. Example
-
-const filteredUsers = useMemo(() => {
-
-    return users.filter(user => user.active);
-
-}, [users]);
-
-
---------------------------------------------------
-
-5. Flow
-
-first render
-    → run function
-    → store result
-
-next render
-    → check dependencies
-    → if same → reuse value
-    → if changed → recompute
-
-
---------------------------------------------------
-
-6. Important
-
-useMemo does NOT:
-
-- stop re-render
-- make code faster automatically
-- replace useEffect
-
-
-It only avoids recalculating values unnecessarily.
-
-
---------------------------------------------------
-
-7. Simple idea
-
-recalculate only when needed
-
 React Rendering Lifecycle (Deep Note)
 
 React rendering is not the same as DOM updating.
@@ -201,7 +117,7 @@ They are just functions that run again and again
 based on state changes.
 
 
-*//*
+*/ /*
 Hook Execution Order Inside Render
 
 React always runs hooks in the SAME order
@@ -340,7 +256,7 @@ React treats hooks like a list.
 
 It walks through them one by one
 every time the component renders.
-*//*
+*/ /*
 React Reconciliation (Diffing Algorithm - Deep Note)
 
 Reconciliation is how React compares
